@@ -1,0 +1,12 @@
+{
+  "name": "sweeptube",
+  "version": "1.0.0",
+  "dependencies": {
+    "puppeteer": "^1.8.0"
+  },
+  "memory": "2048MB",
+  "scripts": {
+    "deploy": "gcloud functions deploy sweeptube --trigger-http --runtime nodejs8 --memory $npm_package_memory --region europe-west1",
+    "start": "functions start && functions deploy --source=. sweeptube --trigger-http"
+  }
+}
